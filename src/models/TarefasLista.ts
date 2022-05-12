@@ -1,12 +1,12 @@
 import { Tarefa } from "./Tarefa";
 
 export class TarefasLista {
-    constructor(public usuario: string, private listaTarefas: Tarefa[] =[]) {
+    constructor(public usuario: string, private listaTarefas: Tarefa[] = []) {
     }
     get tarefas(): readonly Tarefa[] {
-    return this.listaTarefas;
+        return this.listaTarefas;
     }
-    addTarefa(nomeTarefa: string) {
-    this.listaTarefas.push(new Tarefa(nomeTarefa));
+    addTarefa(nomeTarefa: string, dataTarefa: string, detalheTarefa: string) {
+        this.listaTarefas.push(new Tarefa(nomeTarefa, dataTarefa, detalheTarefa));
     }
 }

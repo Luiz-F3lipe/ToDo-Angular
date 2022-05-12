@@ -8,6 +8,8 @@
     <tr>
       <th>#</th>
       <th>Nome da tarefa</th>
+      <th>Data da tarefa</th>
+      <th>Detalhe da tarefa</th>
       <th>Completa</th>
     </tr>
   </thead>
@@ -15,6 +17,8 @@
     <tr *ngFor="let item of items; let i = index">
       <td>{{ i + 1 }}</td>
       <td>{{ item.nomeTarefa }}</td>
+      <td>{{ item.dataTarefa }}</td>
+      <td>{{ item.detalheTarefa }}</td>
       <td>
       <label for="c{{ i }}"></label>
       <input type="checkbox" id="c{{ i }}" [(ngModel)]="item.completo" />
@@ -27,9 +31,11 @@
   <div class="row">
     <div class="col">
       <input class="form-control" placeholder="Enter task here" #todoText />
+      <input class="form-control" placeholder="Enter Data here" #todoData />
+      <input class="form-control" placeholder="Enter description here" #todoDescription />
     </div>
     <div class="col-auto">
-      <button class="btn btn-primary" (click)="addTarefa(todoText.value)">
+      <button class="btn btn-primary" (click)="addTarefa(todoText.value, todoData.value, todoDescription.value)">
         Adicionar
       </button>
     </div>

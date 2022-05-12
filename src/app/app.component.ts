@@ -9,25 +9,25 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   private list = new TarefasLista("Senac", [
-    new Tarefa("Estudar HTML"),
-    new Tarefa("Estudar CSS"),
-    new Tarefa("Estudar JAVASCRIPT"),
+    new Tarefa("Estudar HTML", "asdasd", "ASasasd"),
+    new Tarefa("Estudar CSS", "asdasd", "sadasdas"),
+    new Tarefa("Estudar JAVASCRIPT", "asdasdasd", "asdasdas"),
   ]);
   get username(): string {
-  return this.list.usuario;
+    return this.list.usuario;
   }
 
   get itemCount(): number {
-  return this.list.tarefas.filter(item => !item.completo).length;
+    return this.list.tarefas.filter(item => !item.completo).length;
   }
 
   get items(): readonly Tarefa[] {
     return this.list.tarefas.filter(item => this.showComplete || !item.completo);
   }
 
-  addTarefa(newItem: string) {
+  addTarefa(newItem: string, newItem2: string, newitem3: string) {
     if (newItem != "") {
-      this.list.addTarefa(newItem);
+      this.list.addTarefa(newItem, newItem2, newitem3);
     }
   }
   showComplete: boolean = false;
