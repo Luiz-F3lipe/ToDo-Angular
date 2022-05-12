@@ -9,9 +9,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   private list = new TarefasLista("Senac", [
-    new Tarefa("Estudar HTML", "asdasd", "ASasasd"),
-    new Tarefa("Estudar CSS", "asdasd", "sadasdas"),
-    new Tarefa("Estudar JAVASCRIPT", "asdasdasd", "asdasdas"),
+    new Tarefa("Estudar HTML", "24/02/2002", "Div"),
+    new Tarefa("Estudar CSS", "24/06/2002", "flex box"),
+    new Tarefa("Estudar JAVASCRIPT", "26/06/2022", "arrow function"),
   ]);
   get username(): string {
     return this.list.usuario;
