@@ -26,7 +26,13 @@ export class AppComponent {
   }
 
   addTarefa(newItem: string, newItem2: string, newitem3: string) {
-    if (newItem != "") {
+    if (newItem != " ") {
+      this.list.addTarefa(newItem, newItem2, newitem3);
+    }
+    else if (newItem2 != " ") {
+      this.list.addTarefa(newItem, newItem2, newitem3);
+    }
+    else if (newitem3 != " ") {
       this.list.addTarefa(newItem, newItem2, newitem3);
     }
   }
